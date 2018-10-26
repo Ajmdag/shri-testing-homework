@@ -114,7 +114,7 @@ describe('Проверка buildBreadCrumbs', () => {
 })
 
 describe('Проверка функций, составляющих пути', () => {
-  it('Функция buildFolderUrl возвращает правильную строку (/files/FIRST_ARGUMENT/SECOND_ARGUMENT)', () => {
+  it('Функция buildFolderUrl работает правильно', () => {
     // Подготовка
     const expectedResult = '/files/32145901/path';
 
@@ -125,7 +125,7 @@ describe('Проверка функций, составляющих пути', (
     expect(actualResult).to.be.eql(expectedResult);
   })
 
-  it('Функция buildFileUrl возвращает правильную строку (/content/FIRST_ARGUMENT/SECOND_ARGUMENT)', () => {
+  it('Функция buildFileUrl работает правильно', () => {
     // Подготовка
     const expectedResult = '/content/amazingPath777/hellYesGoodPath';
 
