@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 const sinon = require('sinon');
-const {gitMethods, GitMethods } = require('../../utils/git');
+const { gitMethods, GitMethods } = require('../../utils/git');
 
 describe('Проверка git', () => {
     it('Функция parseHistoryItem работает правильно', () => {
