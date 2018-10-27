@@ -2,19 +2,18 @@ var assert = require('chai').assert;
 
 describe('git history viewer', function() {
 
-    const testHashValue = '1723172017dceeb3bc3559b5ff460acc8d7b637b';
-    it('Переход из списка коммитов на список файлов коммита 1723172017dceeb3bc3559b5ff460acc8d7b637b переходит на `http://localhost:3000/files/1723172017dceeb3bc3559b5ff460acc8d7b637b/`', function() {
+    const testHashValue = '7d203416d154314cf0291036cf1bf62de4e07900';
+    it('Переход из списка коммитов на список файлов коммита 7d203416d154314cf0291036cf1bf62de4e07900 переходит на `http://localhost:3000/files/7d203416d154314cf0291036cf1bf62de4e07900/`', function() {
         return this.browser
             .url('http://localhost:3000')
-            .element('.commit__link')
             .click(`a=${testHashValue}`)
             .getUrl()
-            .then(function(list) {
-                assert.equal(list, [`http://localhost:3000/files/${testHashValue}/`])
+            .then(function(url) {
+                assert.equal(url, [`http://localhost:3000/files/${testHashValue}/`])
             });
     });
 
-    it('Переход из списка файлов во вложенную папку views переходит на `http://localhost:3000/files/1723172017dceeb3bc3559b5ff460acc8d7b637b/views`', function() {
+    it('Переход из списка файлов во вложенную папку views переходит на `http://localhost:3000/files/7d203416d154314cf0291036cf1bf62de4e07900/views`', function() {
         return this.browser
             .url(`http://localhost:3000/files/${testHashValue}/`)
             .click(`a=views`)
@@ -24,7 +23,7 @@ describe('git history viewer', function() {
             });
     });
 
-    it('Переход из списка файлов на страницу отдельного файла переходит на `http://localhost:3000/content/1723172017dceeb3bc3559b5ff460acc8d7b637b/app.js`', function() {
+    it('Переход из списка файлов на страницу отдельного файла переходит на `http://localhost:3000/content/7d203416d154314cf0291036cf1bf62de4e07900/app.js`', function() {
         return this.browser
             .url(`http://localhost:3000/files/${testHashValue}/`)
             .click(`a=app.js`)
@@ -45,7 +44,7 @@ describe('git history viewer', function() {
             });
     });
 
-    it('Переход из страницы отдельного файла на ROOT переходит на `http://localhost:3000/files/1723172017dceeb3bc3559b5ff460acc8d7b637b/`', function() {
+    it('Переход из страницы отдельного файла на ROOT переходит на `http://localhost:3000/files/7d203416d154314cf0291036cf1bf62de4e07900/`', function() {
         return this.browser
             .url(`http://localhost:3000/content/${testHashValue}/app.js`)
             .elements('.breadcrumbs')
