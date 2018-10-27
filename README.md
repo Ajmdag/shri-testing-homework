@@ -9,8 +9,14 @@ npm install
 npm start
 ```
 
-## Запуск тестов
+## Запуск unit-тестов
 `npm test`
+
+## Запуск интеграционных тестов
+```
+selenium-standalone start
+./node_modules/.bin/hermione
+```
 
 # Домашнее задание: автотесты
 
