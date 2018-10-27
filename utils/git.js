@@ -76,28 +76,3 @@ module.exports = {
   gitMethods,
   GitMethods
 };
-
-
-// class Cat {
-//   constructor()
-//   {
-
-//   }
-
-//   meow() {
-//     console.log(say());
-//   }
-
-//   say() {
-//     return generateSomeWord();
-//   }
-// }
-
-// (function() {
-//   const testCat = new Cat();
-//   const sayStub = () => 'meow meow!'
-
-//   testCat.say = sayStub;
-
-  
-// })()
